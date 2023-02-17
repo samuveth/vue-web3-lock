@@ -6,7 +6,7 @@ import type {
 } from "@ethersproject/providers";
 
 interface WalletConnectProviderOptions extends ConnectorOptions {
-  rpc: { "1": string; "4": string; "42": string };
+  rpc?: { "1": string; "4": string; "42": string };
 }
 
 export default class Connector extends LockConnector {

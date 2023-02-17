@@ -1,16 +1,36 @@
 {
-  "name": "web3-lock",
-  "private": true,
-  "version": "0.0.0",
+  "name": "vue-web3-lock",
+  "version": "0.0.1",
   "type": "module",
+  "license": "MIT",
+  "description": "Vue web3 connector composable",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samuveth/vue-web3-lock"
+  },
+  "author": "Samuv <https://github.com/antfu>",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.umd.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/node": "^18.13.0",
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
+    "vite-plugin-dts": "^2.0.0-beta.1",
     "vue": "^3.2.47"
   },
   "dependencies": {

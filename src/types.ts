@@ -7,7 +7,7 @@ import type walletconnect from "./connectors/walletconnect";
 import type injected from "./connectors/injected";
 
 export interface ConnectorOptions {
-  rpc: Record<string, any>;
+  rpc?: Record<string, any>;
 }
 
 export interface LockInstance {

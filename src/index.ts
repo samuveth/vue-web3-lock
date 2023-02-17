@@ -36,7 +36,7 @@ export function useLock(options: {
       provider.value = localProvider as JsonRpcFetchFunc | ExternalProvider;
     }
     if (provider.value) {
-      localStorage.setItem(`_${name}.connector`, id);
+      localStorage.setItem(`_lock.connector`, id);
       isAuthenticated.value = true;
     }
     return;
@@ -46,7 +46,7 @@ export function useLock(options: {
     const id = await getConnector();
     if (id) {
       getLockConnector(id).logout();
-      localStorage.removeItem(`_${name}.connector`);
+      localStorage.removeItem(`_lock.connector`);
       isAuthenticated.value = false;
       provider.value = null;
     }
@@ -54,7 +54,7 @@ export function useLock(options: {
   }
 
   async function getConnector() {
-    const id = localStorage.getItem(`_${name}.connector`);
+    const id = localStorage.getItem(`_lock.connector`);
     if (id) {
       const isLoggedIn = await getLockConnector(id).isLoggedIn();
       return isLoggedIn ? id : false;
